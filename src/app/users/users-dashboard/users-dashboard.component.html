@@ -1,0 +1,33 @@
+<div id="dashboard-container">
+  <div id="Formulario">
+    <h2>Formulario de Usuarios</h2>
+    <app-user-form [user]="selected_user" (userAdded)="agregarUsuario($event)" (event)="eventoRecibido($event)"></app-user-form>
+
+  </div>
+  <img >
+
+  
+  <div id="table_users">
+      <h1>{{ tittle }}</h1>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>USERNAME</th>
+          <th>PHONE</th>
+          <th>WEBSITE</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let user of getAllUsers()">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.website }}</td>
+          <td><button (click)="seleccionar_usuario(user)">Editar</button></td>
+        </tr>
+      </table>
+    </div>
+  
+    
+  </div>
